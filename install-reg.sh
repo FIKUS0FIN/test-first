@@ -1,9 +1,19 @@
 #!/bin/bash
 	# instaling postgreSQL 
-#sudo apt-get update
-#sudo apt-get install -y postgresql postgresql-contrib
-#	#adding user to Linux vm
-#sudo useradd -m -p 22446688 -s /bin/bash user
+
+sudo apt-get update
+sudo apt-get install -y postgresql postgresql-contrib
+
+	#adding user to Linux vm
+
+sudo useradd -m -p 22446688 -s /bin/bash user
+
+# install nginx with ssl 
+
+cd nginx-ssl/
+chmod +x bootstrap.sh 
+./bootstrap.sh 
+
 
 # install redis 
 
@@ -15,7 +25,6 @@ tar xzvf redis-stable.tar.gz
 cd redis-stable
 make
 sudo make install
-
 
 
 #configure db and user pri...
